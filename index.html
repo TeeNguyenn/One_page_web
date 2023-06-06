@@ -73,12 +73,135 @@
                 </div>
            </div>
 
+           <!-- tour section -->
+           <div class="tour-section">
+                <div class="content-section">
+                    <h2 class="heading-section white-text">TOUR DATES</h2>
+                    <p class="sub-heading-section white-text">Remember to book your tickets!</p>
+
+                    <ul class="ticket-list">
+                        <li>September <span class="ticket-status">Sold out</span></li>
+                        <li>October  <span class="ticket-status">Sold out</span></li>
+                        <li>November <span class="remain-ticket-status white-text">3</span></li>
+                    </ul>
+
+                    <!-- place -->
+                    <div class="place-list">
+                        <div class="place-item">
+                            <img src="./assets/img/space/space1.jpg" alt="New York" class="place-image">
+                            <div class="place-body">
+                                <b class="place-heading">New York</b>
+                                <p class="place-time">Fri 27 Nov 2016</p>
+                                <p class="place-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                                <button class="place-buy-but js-buy-ticket">Buy Tickets</button>
+                            </div>
+                        </div>
+                        <div class="place-item">
+                            <img src="./assets/img/space/space2.jpg" alt="New York" class="place-image">
+                            <div class="place-body">
+                                <b class="place-heading">Paris</b>
+                                <p class="place-time">Sat 28 Nov 2016</p>
+                                <p class="place-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                                <button class="place-buy-but js-buy-ticket">Buy Tickets</button>
+                            </div>
+                        </div>
+                        <div class="place-item">
+                            <img src="./assets/img/space/space3.jpg" alt="New York" class="place-image">
+                            <div class="place-body">
+                                <b class="place-heading">San Francisco</b>
+                                <p class="place-time">Sun 29 Nov 2016</p>
+                                <p class="place-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                                <button class="place-buy-but js-buy-ticket">Buy Tickets</button>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+           </div>
+
            
         </div>
 
-        <div id="footer">
+        <div id="footer"> 
 
         </div>
+
     </div>
+
+    <!-- buy ticket modal -->
+    <div class="modal js-modal">
+        <div class="modal-container js-modal-container">
+
+            <div class="modal-close js-modal-close">
+                <i class="ti-close close-in-modal"></i>
+            </div>
+
+            <header class="modal-heading">
+                <i class="ti-bag icon-bag-in-modal"></i>
+                Tickets
+            </header>
+
+            <div class="body-modal">
+                <label for="link-label1" class="label-modal">
+                    <i class="ti-shopping-cart label-in-modal"></i>
+                    Tickets, $15 per person
+                </label>
+                <input type="text" id="link-label1" class="input-modal" placeholder="How many?">
+
+                <label for="link-label2" class="label-modal">
+                    <i class="ti-user label-in-modal"></i>
+                    Send To
+                </label>
+                <input type="text" id="link-label2" class="input-modal"  placeholder="Enter email">
+
+                <button class="pay-but">
+                    PAY
+                    <i class="ti-check check-but-modal"></i>
+                </button>
+            </div>
+            
+            <footer class="footer-modal">
+                Need
+                <a href="#">help?</a>
+            </footer>
+        </div>
+    </div>
+
+    <!-- js cho nút buy ticket  -->
+    <script>
+        const buyBtns = document.querySelectorAll('.js-buy-ticket')
+        const modal = document.querySelector('.js-modal')
+        const modalContainer = document.querySelector('.js-modal-container')
+        const modalClose = document.querySelector('.js-modal-close')
+
+        // Hàm hiển thị buy ticket modal ( thêm class open vào modal)
+        function showBuyTicket() {
+            modal.classList.add('open')
+        }
+        
+        // Hàm ẩn buy ticket modal ( hủy bỏ class open của modal)
+        function hideBuyTicket() {
+            modal.classList.remove('open')
+        }
+
+        // Lặp qua từng nút "Buy Ticket" và nghe hành vi 'click'
+        for(const buyBtn of buyBtns) {
+            buyBtn.addEventListener('click', showBuyTicket)
+        }
+
+        // Nghe hành vi 'click' vào nút close (x)
+        modalClose.addEventListener('click', hideBuyTicket)
+
+        // Nghe hành vi 'click' vào khoảng không gian bên ngoài Buy Ticket modal
+        modal.addEventListener('click', hideBuyTicket)
+
+        // Nghe hành vi 'click' bên trong Buy Ticket modal và chỉ nổi bọt đến modal-container 
+        // --> ngăn remove class open
+        modalContainer.addEventListener('click', function(event) {
+            event.stopPropagation()
+        }
+        )
+
+    </script>
 </body>
 </html>

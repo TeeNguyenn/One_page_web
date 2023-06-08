@@ -55,21 +55,21 @@
                 <p class="sub-heading-section">We love music</p>
                 <p class="about-text">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 
-                <!-- band member description -->
-                <div class="member-list">
-                    <div class="band-member">
+                <!-- band members description -->
+                <div class="row member-list">
+                    <div class="col col-third center-text">
                         <div class="member-name">Name</div>
                         <img src="./assets/img/memberName/member1.jpg" alt="Name" class="member-image">
                     </div>
-                    <div class="band-member">
+                    <div class="col col-third center-text">
                         <div class="member-name">Name</div>
                         <img src="./assets/img/memberName/member1.jpg" alt="Name" class="member-image">
                     </div>
-                    <div class="band-member">
+                    <div class="col col-third center-text">
                         <div class="member-name">Name</div>
                         <img src="./assets/img/memberName/member1.jpg" alt="Name" class="member-image">
                     </div>
-                    <div class="clear"></div>
+                    
                 </div>
            </div>
 
@@ -86,44 +86,102 @@
                     </ul>
 
                     <!-- place -->
-                    <div class="place-list">
-                        <div class="place-item">
+                    <div class=" row place-list">
+                        <div class="col col-third">
                             <img src="./assets/img/space/space1.jpg" alt="New York" class="place-image">
                             <div class="place-body">
                                 <b class="place-heading">New York</b>
                                 <p class="place-time">Fri 27 Nov 2016</p>
                                 <p class="place-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button class="place-buy-but js-buy-ticket">Buy Tickets</button>
+                                <button class="button js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
-                        <div class="place-item">
+                        <div class="col col-third">
                             <img src="./assets/img/space/space2.jpg" alt="New York" class="place-image">
                             <div class="place-body">
                                 <b class="place-heading">Paris</b>
                                 <p class="place-time">Sat 28 Nov 2016</p>
                                 <p class="place-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button class="place-buy-but js-buy-ticket">Buy Tickets</button>
+                                <button class="button js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
-                        <div class="place-item">
+                        <div class="col col-third">
                             <img src="./assets/img/space/space3.jpg" alt="New York" class="place-image">
                             <div class="place-body">
                                 <b class="place-heading">San Francisco</b>
                                 <p class="place-time">Sun 29 Nov 2016</p>
                                 <p class="place-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button class="place-buy-but js-buy-ticket">Buy Tickets</button>
+                                <button class="button js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
-                        <div class="clear"></div>
+                        
                     </div>
                 </div>
            </div>
 
-           
+           <!-- contact section -->
+           <div class="content-section">
+                <h2 class="heading-section">CONTACT</h2>
+                <p class="sub-heading-section">Fan? Drop a note!</p>
+
+                <div class="row contact-list">
+                    <div class="col col-half contact-infor">
+                        <ul class="infor">
+                            <li>
+                                <i class="ti-location-pin loc"></i>
+                                Chicago, US
+                            </li>
+                            <li>
+                                <i class="ti-tablet phone-number"></i>
+                                Phone: +00 151515
+                            </li>
+                            <li>
+                                <i class="ti-email mail"></i>
+                                Email: mail@mail.com
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col col-half contact-form">
+                        <form action="">
+                            <div class="row">
+                                <div class="col col-half">
+                                    <input type="text" name="" required placeholder="Name" id="" class="form-control">
+                                </div>
+                                <div class="col col-half">
+                                    <input type="email" name="" required placeholder="Email" id="" class="form-control">
+
+                                </div>
+                                
+                            </div>
+                            <div class="row mt-8">
+                                <div class="col col-full">
+                                    <input type="text" name="" required placeholder="Message" id="" class="form-control">
+                                </div>
+                            </div>
+                            <input class="button pull-right mt-16" type="submit" value="SEND">
+                        </form>
+                    </div>
+                </div>
+           </div>
+
+           <!-- map section -->
+           <div class="map-section">
+                <img src="./assets/img/map.jpg" alt="Map">
+           </div>
+
         </div>
 
         <div id="footer"> 
-
+            <div class="social-list">
+                <a href=""><i class="ti-facebook"></i></a>
+                <a href=""><i class="ti-instagram"></i></a>
+                <a href=""><i class="ti-github"></i></a>
+                <a href=""><i class="ti-pinterest"></i></a>
+                <a href=""><i class="ti-twitter-alt"></i></a>
+                <a href=""><i class="ti-linkedin"></i></a>
+            </div>
+            <p class="copy-right">Powered by <a href="">w3.css</a></p>
         </div>
 
     </div>
@@ -167,7 +225,7 @@
         </div>
     </div>
 
-    <!-- js cho nút buy ticket  -->
+    <!-- js cho nút [buy ticket]  -->
     <script>
         const buyBtns = document.querySelectorAll('.js-buy-ticket')
         const modal = document.querySelector('.js-modal')
